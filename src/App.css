@@ -1,0 +1,96 @@
+:root {
+	font-size: 62.5%;
+	--font-size--small: 1.4rem;
+	--font-size--default: 1.6rem;
+	--font-size--large: 2.4rem;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+main {
+	width: 450px;
+	box-shadow: 0 0 0 1px black;
+	padding: 10px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+main > * {
+	box-shadow: 0 0 0 1px black;
+	font-size: var(--font-size--default);
+}
+
+.settings {
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.task {
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	flex-grow: 1;
+}
+
+.task__annotation {
+}
+
+.task__author {
+	display: flex;
+	justify-content: flex-end;
+	padding: 5px;
+	padding-right: 10px;
+	box-sizing: border-box;
+}
+
+
+.task > * {
+	box-shadow: 0 0 0 1px green;
+}
+
+.answer {
+	width: 100%;
+}
+
+.answer-row {
+	display: flex;
+}
+
+#answer--input {
+	flex-grow: 1;
+	width: unset;
+}
+
+
+.input-reset {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border-radius: 0;
+	border: none;
+	box-shadow: none;
+	outline: none;
+}
+
+.textarea-reset {
+	border: none;
+	box-shadow: none;
+	outline: none;
+	resize: none;
+	overflow: hidden;
+	width: 100%;
+	background-color: red;
+	box-sizing: border-box;
+}
