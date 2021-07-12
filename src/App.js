@@ -1,6 +1,8 @@
 import './App.css';
-import React from 'react'
-import CodeEditor from './components/CodeEditor'
+import React from 'react';
+import CodeEditor from './components/CodeEditor';
+import ExpandableTextarea from './components/ExpandableTextarea';
+import ResettedInput from './components/ResettedInput';
 
 
 class App extends React.Component{
@@ -46,12 +48,6 @@ class Program {
 		})
 	}
 
-	// Not binded! this - current textarea.
-	onTextareaChange(){
-		console.log(this);
-	}
-
-
 	render(){
 		const task = this.state.task;
 		return (
@@ -73,19 +69,19 @@ class Program {
 	
 				<div className="task">
 					<div className="task__question-wrapper">
-						<textarea
-							className="task__question textarea-reset" 
-							onChange={(event) => this.onTaskPropertyChange(event,"question")}
+						<ExpandableTextarea 
+							className="task__question"
+							onChange={event => this.onTaskPropertyChange(event,"question")}
 							value={task.question}
-						></textarea>
+						/>
 					</div>
 					<CodeEditor code={task.code}/>
 					<div className="task__annotation-wrapper">
-						<textarea 
-							className="task__annotation textarea-reset"
-							onChange={(event) => this.onTaskPropertyChange(event,"annotation")}
+						<ExpandableTextarea 
+							className="task__annotation"
+							onChange={event => this.onTaskPropertyChange(event,"annotation")}
 							value={task.annotation}
-						></textarea>
+						/>
 					</div>
 					<div className="task__author">
 						<span>@doritosxxx</span>
@@ -95,7 +91,11 @@ class Program {
 				<div className="answer">
 					<div className="answer-row">
 						<label id="answer--input">Ответ: </label>
-						<input type="text" id="answer--input" value={task.answer}></input>
+						<ResettedInput 
+							id="answer--input" 
+							value={task.answer}
+							onChange={event => this.onTaskPropertyChange(event,"answer")} 
+						/>
 					</div>
 				</div>
 			</main>

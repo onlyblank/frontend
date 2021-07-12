@@ -1,0 +1,10 @@
+.textarea-reset {
+	border: none;
+	box-shadow: none;
+	outline: none;
+	resize: none;
+	overflow: hidden;
+	width: 100%;
+	box-sizing: border-box;
+	vertical-align: top;
+}

@@ -1,3 +1,10 @@
+:root {
+	font-size: 62.5%;
+	--font-size--small: 1.4rem;
+	--font-size--default: 1.6rem;
+	--font-size--large: 2.4rem;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
