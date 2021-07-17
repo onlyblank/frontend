@@ -4,6 +4,8 @@ import 'codemirror/lib/codemirror.css';
 import 'codemirror/mode/clike/clike';
 import 'codemirror/theme/dracula.css';
 
+import './style.css';
+
 export default class CodeEditor extends React.Component {
 
 	constructor(props){
@@ -11,27 +13,28 @@ export default class CodeEditor extends React.Component {
 
 		this.state = {
 			code: props.code,
+			editor: null,
+			wrapperRef: React.createRef(),
 		};
 	}
 
 	componentDidMount(){
-		const editor = CodeMirror(document.querySelector(".task__code-wrapper"), {
+		const wrapper = this.state.wrapperRef.current;
+		const editor = CodeMirror(wrapper, {
 			lineNumbers: true,
 			mode: "text/x-csharp",
 			theme: "dracula",
 			value: this.state.code,
 			lineWrapping: true,
 			scrollbarStyle: "null",
+			viewportMargin: Infinity,
 		})
-
-		editor.on("viewportChange", function(e){
-			console.log(e);
-		})
+		this.setState({ editor });
 	}
 
 	render(){
 		return(
-			<div className="task__code-wrapper"></div>
+			<div className="task__code-wrapper" ref={this.state.wrapperRef}></div>
 		)
 	}
 }

@@ -30,13 +30,17 @@ main > * {
 	box-sizing: border-box;
 }
 
-.task {
+.task-wrapper {
 	width: 100%;
+	margin: 2rem 0;
+}
+
+.task {
+	width: inherit;
 	padding: 10px;
 	box-sizing: border-box;
-	margin-top: 30px;
-	margin-bottom: 30px;
 	flex-grow: 1;
+	background-color: white;
 }
 
 .task__author {
@@ -45,6 +49,10 @@ main > * {
 	padding: 5px;
 	padding-right: 10px;
 	box-sizing: border-box;
+}
+
+.task__code-editor-wrapper {
+	margin: .5rem 0 .5rem 0;
 }
 
 .answer {
@@ -58,4 +66,9 @@ main > * {
 #answer--input {
 	flex-grow: 1;
 	width: unset;
+}
+
+textarea {
+	font-family: inherit;
+	font-size: var(--font-size--default);
 }

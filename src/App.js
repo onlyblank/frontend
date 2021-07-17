@@ -4,6 +4,8 @@ import CodeEditor from './components/CodeEditor';
 import ExpandableTextarea from './components/ExpandableTextarea';
 import ResettedInput from './components/ResettedInput';
 
+import {toPng} from 'html-to-image'
+
 
 class App extends React.Component{
 
@@ -35,7 +37,10 @@ class Program {
 			answer: "нет ответа xddd",
 		};
 
-		this.state = {task};
+		this.state = {
+			task,
+			taskRef: React.createRef()
+		};
 		this.onTaskPropertyChange = this.onTaskPropertyChange.bind(this);
 	}
 
@@ -46,6 +51,13 @@ class Program {
 			state.task[property] = event.target.value;
 			return state;
 		})
+	}
+
+	async export(){
+		const taskNode = this.state.taskRef.current;
+		const dataURI = await toPng(taskNode);
+		console.log(dataURI)
+
 	}
 
 	render(){
@@ -67,24 +79,28 @@ class Program {
 					</div>
 				</div>
 	
-				<div className="task">
-					<div className="task__question-wrapper">
-						<ExpandableTextarea 
-							className="task__question"
-							onChange={event => this.onTaskPropertyChange(event,"question")}
-							value={task.question}
-						/>
-					</div>
-					<CodeEditor code={task.code}/>
-					<div className="task__annotation-wrapper">
-						<ExpandableTextarea 
-							className="task__annotation"
-							onChange={event => this.onTaskPropertyChange(event,"annotation")}
-							value={task.annotation}
-						/>
-					</div>
-					<div className="task__author">
-						<span>@doritosxxx</span>
+				<div className="task-wrapper">
+					<div className="task" ref={this.state.taskRef}>
+						<div className="task__question-wrapper">
+							<ExpandableTextarea 
+								className="task__question"
+								onChange={event => this.onTaskPropertyChange(event,"question")}
+								value={task.question}
+							/>
+						</div>
+						<div className="task__code-editor-wrapper">
+							<CodeEditor code={task.code}/>
+						</div>
+						<div className="task__annotation-wrapper">
+							<ExpandableTextarea 
+								className="task__annotation"
+								onChange={event => this.onTaskPropertyChange(event,"annotation")}
+								value={task.annotation}
+							/>
+						</div>
+						<div className="task__author">
+							<span>@doritosxxx</span>
+						</div>
 					</div>
 				</div>
 	
@@ -98,6 +114,7 @@ class Program {
 						/>
 					</div>
 				</div>
+				<button onClick={this.export.bind(this)}>asd</button>
 			</main>
 		);
 	}
