@@ -4,7 +4,7 @@ import CodeEditor from './components/CodeEditor';
 import ExpandableTextarea from './components/ExpandableTextarea';
 import ResettedInput from './components/ResettedInput';
 
-import {toPng} from 'html-to-image'
+import {toPng} from 'html-to-image';
 
 
 class App extends React.Component{
@@ -56,6 +56,7 @@ class Program {
 	async export(){
 		const taskNode = this.state.taskRef.current;
 		const dataURI = await toPng(taskNode);
+
 		console.log(dataURI)
 
 	}

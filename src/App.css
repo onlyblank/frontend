@@ -7,7 +7,7 @@ body {
 }
 
 main {
-	width: 450px;
+	width: 550px;
 	box-shadow: 0 0 0 1px black;
 	padding: 10px;
 
@@ -16,11 +16,7 @@ main {
 	align-items: center;
 
 	font-family: Monsterrat, sans-serif;
-}
-
-
-main > * {
-	box-shadow: 0 0 0 1px black;
+	background-color: var(--color-background);
 	font-size: var(--font-size--default);
 }
 
@@ -37,10 +33,11 @@ main > * {
 
 .task {
 	width: inherit;
-	padding: 10px;
+	padding: 40px;
 	box-sizing: border-box;
 	flex-grow: 1;
-	background-color: white;
+	background-color: var(--color-background);
+	box-shadow: 0 0 0 1px black;
 }
 
 .task__author {
@@ -53,6 +50,10 @@ main > * {
 
 .task__code-editor-wrapper {
 	margin: .5rem 0 .5rem 0;
+}
+
+.task__question, .task__annotation{
+	font-size: var(--font-size--medium);
 }
 
 .answer {
@@ -69,6 +70,7 @@ main > * {
 }
 
 textarea {
+	background-color: inherit;
 	font-family: inherit;
 	font-size: var(--font-size--default);
 }

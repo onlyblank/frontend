@@ -4,6 +4,12 @@
 	--font-size--default: 1.6rem;
 	--font-size--medium: 2rem;
 	--font-size--large: 2.4rem;
+
+	--color-background: #ddd9cd;
+	--color-primary-blue: #283f6f;
+	--color-secondary-blue: #74acf8;
+	--color-primary-red: #764368;
+	--color-secondary-red: #bf486b;
 }
 
 body {
