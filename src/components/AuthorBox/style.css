@@ -1,0 +1,8 @@
+.author-box {
+	padding: 10px;
+	box-sizing: border-box;
+	box-shadow:  13px 13px 26px #c0bdb2,
+             -13px -13px 26px #faf5e8;
+	border-radius: 10px;
+	margin: 20px;
+}

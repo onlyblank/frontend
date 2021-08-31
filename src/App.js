@@ -3,11 +3,9 @@ import React from 'react';
 import CodeEditor from './components/CodeEditor';
 import ExpandableTextarea from './components/ExpandableTextarea';
 import ResettedInput from './components/ResettedInput';
+import AuthorBox from './components/AuthorBox';
 
-import {toPng} from 'html-to-image';
-
-
-class App extends React.Component{
+class App extends React.Component {
 
 	constructor(props){
 		super(props);
@@ -22,19 +20,16 @@ class Program {
 	}
 
 	static void Meth(ref int x) {
-	x--;
-	if (x == 0)
-		return;
-	Meth(ref x);
-	Console.Write(x);
+		x--;
+		if (x == 0)
+			return;
+		Meth(ref x);
+		Console.Write(x);
 	}
 }`,
-			annotation: `На экран будет выведено:
-Примечание:
-Если возникнет ошибка компиляции, введите: ***
-Если ошибок и исключений нет, но на экран не выведется ничего, введите: ---
-Если возникнет ошибка исполнения или исключение, введите: +++`,
+			annotation: `На экран будет выведено:`,
 			answer: "нет ответа xddd",
+			author: "@doritosxxx",
 		};
 
 		this.state = {
@@ -42,23 +37,20 @@ class Program {
 			taskRef: React.createRef()
 		};
 		this.onTaskPropertyChange = this.onTaskPropertyChange.bind(this);
+		this.setTaskProperty = this.setTaskProperty.bind(this);
 	}
 
 	onTaskPropertyChange(event, property) {
+		this.setTaskProperty(property, event.target.value);
+	}
+
+	setTaskProperty(property, value) {
 		if(!this.state.task.hasOwnProperty(property))
 			throw new Error(`property ${property} not found in Task object`);
 		this.setState(state => {
-			state.task[property] = event.target.value;
+			state.task[property] = value;
 			return state;
 		})
-	}
-
-	async export(){
-		const taskNode = this.state.taskRef.current;
-		const dataURI = await toPng(taskNode);
-
-		console.log(dataURI)
-
 	}
 
 	render(){
@@ -74,9 +66,21 @@ class Program {
 							<option value="3">category with id 3</option>
 						</select>
 					</div>
-					<div className="settings__is-enabled">
-						<label htmlFor="settings__is-enabled--checkbox">Вопрос активен</label>
-						<input type="checkbox" name="" id="settings__is-enabled--checkbox"/>
+					<div className="settings__is-task-enabled">
+						<label htmlFor="settings__is-task-enabled--checkbox">Вопрос активен</label>
+						<input type="checkbox" name="" id="settings__is-task-enabled--checkbox"/>
+					</div>
+					<div className="settings__is-code-enabled">
+						<label htmlFor="settings__is-code-enabled--checkbox">Вопрос с кодом</label>
+						<input 
+							type="checkbox" 
+							name="" 
+							id="settings__is-code-enabled--checkbox"
+							checked={task.code !== null}
+							onChange={event => {
+								this.setTaskProperty("code", event.target.checked ? "" : null)
+							}}
+						/>
 					</div>
 				</div>
 	
@@ -89,9 +93,9 @@ class Program {
 								value={task.question}
 							/>
 						</div>
-						<div className="task__code-editor-wrapper">
+						{task.code !== null && <div className="task__code-editor-wrapper">
 							<CodeEditor code={task.code}/>
-						</div>
+						</div>}
 						<div className="task__annotation-wrapper">
 							<ExpandableTextarea 
 								className="task__annotation"
@@ -99,9 +103,10 @@ class Program {
 								value={task.annotation}
 							/>
 						</div>
-						<div className="task__author">
-							<span>@doritosxxx</span>
-						</div>
+						{/* author */}
+						{/* <div className="task__author">
+							<AuthorBox author={task.author} />
+						</div> */}
 					</div>
 				</div>
 	
@@ -115,7 +120,6 @@ class Program {
 						/>
 					</div>
 				</div>
-				<button onClick={this.export.bind(this)}>asd</button>
 			</main>
 		);
 	}

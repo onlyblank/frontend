@@ -33,7 +33,7 @@ main {
 
 .task {
 	width: inherit;
-	padding: 40px;
+	padding: 20px 40px;
 	box-sizing: border-box;
 	flex-grow: 1;
 	background-color: var(--color-background);
@@ -43,16 +43,13 @@ main {
 .task__author {
 	display: flex;
 	justify-content: flex-end;
-	padding: 5px;
-	padding-right: 10px;
-	box-sizing: border-box;
 }
 
 .task__code-editor-wrapper {
-	margin: .5rem 0 .5rem 0;
+	margin: .5rem 0 1rem 0;
 }
 
-.task__question, .task__annotation{
+.task__question, .task__annotation {
 	font-size: var(--font-size--medium);
 }
 
