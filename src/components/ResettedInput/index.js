@@ -8,6 +8,7 @@ export default class ResettedInput extends React.Component {
 			{...props}
 			className={("input-reset " + className).trim()}
 			type="text"
+			spellCheck="false"
 		/>)
 	}
 }

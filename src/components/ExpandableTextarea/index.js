@@ -15,6 +15,10 @@ export default class ExpandableTextarea extends React.Component {
 		this.updateHeight();
 	}
 
+	componentDidUpdate(){
+		this.updateHeight();
+	}
+
 	updateHeight(){
 		const textarea = this.textarea.current;
 		textarea.style.height = "auto";
@@ -23,7 +27,8 @@ export default class ExpandableTextarea extends React.Component {
 
 	onChange(event){
 		this.updateHeight();
-		this.props.onChange(event);
+		if(typeof this.props.onChange === "function")
+			this.props.onChange(event);
 	}
 
 	render(){
@@ -35,6 +40,7 @@ export default class ExpandableTextarea extends React.Component {
 			className={("textarea-reset " + className).trim()}
 			onChange={this.onChange}
 			ref={this.textarea}
+			spellCheck="false"
 		></textarea>);
 	}
 }

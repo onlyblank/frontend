@@ -32,6 +32,11 @@ export default class CodeEditor extends React.Component {
 		this.setState({ editor });
 	}
 
+	componentDidUpdate(){
+		const code = this.props.code;
+		this.state.editor.doc.setValue(code);
+	}
+
 	render(){
 		return(
 			<div className="task__code-wrapper" ref={this.state.wrapperRef}></div>
