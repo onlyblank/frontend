@@ -8,3 +8,7 @@
 	box-sizing: border-box;
 	vertical-align: top;
 }
+
+.textarea-reset:disabled {
+	color: initial;
+}

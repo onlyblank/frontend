@@ -28,7 +28,8 @@ export default class CodeEditor extends React.Component {
 			lineWrapping: true,
 			scrollbarStyle: "null",
 			viewportMargin: Infinity,
-		})
+			readOnly: !!this.props.readOnly,
+		});
 		this.setState({ editor });
 	}
 
