@@ -21,11 +21,11 @@ export default class CodeEditor extends React.Component {
 	componentDidMount(){
 		const wrapper = this.state.wrapperRef.current;
 		const editor = CodeMirror(wrapper, {
-			lineNumbers: true,
+			lineNumbers: false,
 			mode: "text/x-csharp",
 			theme: "dracula",
 			value: this.state.code,
-			lineWrapping: true,
+			lineWrapping: false,
 			scrollbarStyle: "null",
 			viewportMargin: Infinity,
 			readOnly: !!this.props.readOnly,

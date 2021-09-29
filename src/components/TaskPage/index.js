@@ -24,10 +24,12 @@ export default function TaskPage(){
 	}, [id])
 
 	return (
-		<div style={{
-			width: '600px'
-		}}>
-			<Task task={task} setTask={setTask}/>
+		<div>
+			<Task 
+				task={task} 
+				setTask={setTask}
+				editable={false}
+			/>
 		</div>
 	);
 }

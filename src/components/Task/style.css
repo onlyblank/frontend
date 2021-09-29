@@ -1,5 +1,5 @@
 .task__wrapper {
-	width: inherit;
+	width: fit-content;
 	padding: 20px 20px;
 	box-sizing: border-box;
 	flex-grow: 1;
@@ -17,7 +17,7 @@
 .task__code-editor-wrapper {
 	margin: .5rem 0 1rem 0;
 	font-size: var(--font-size--medium);
-	
+	width: fit-content;
 }
 
 .task__question {
