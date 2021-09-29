@@ -8,9 +8,9 @@ export default function TaskPage(){
 	const { id } = useParams();
 
 	const [task, setTask] = useState({
-		question: 'asd',
-		code: '//eto kod',
-		annotation: 'asd',
+		question: '',
+		code: '',
+		annotation: '',
 	});
 
 	useEffect(() => {
@@ -21,7 +21,7 @@ export default function TaskPage(){
 			})
 			.then(data => setTask(data))
 			.then(() => window.dispatchEvent(new CustomEvent("taskReady")))
-	}, [id])
+	}, [id]);
 
 	return (
 		<div>
