@@ -2,5 +2,5 @@
 	height: auto;
 	padding: 1rem .5rem;
 	border-radius: 1rem;
-	width: fit-content;
+	min-width: fit-content;
 }

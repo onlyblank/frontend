@@ -1,3 +1,33 @@
+.grow-wrap{
+	display: grid;
+}
+
+.grow-wrap::after {
+	content: attr(data-replicated-value) " ";
+	white-space: pre-wrap;
+	visibility: hidden;
+}
+
+.grow-wrap > textarea {
+	resize: none;
+	overflow: hidden;
+	background-color: transparent;
+}
+
+.grow-wrap > textarea,
+.grow-wrap::after {
+  /* Identical styling required!! */
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 0.5rem;
+  font: inherit;
+  max-width: 600px;
+
+  /* Place on top of each other */
+  grid-area: 1 / 1 / 2 / 2;
+}
+/*
 .textarea-reset {
 	border: none;
 	box-shadow: none;
@@ -8,7 +38,7 @@
 	box-sizing: border-box;
 	vertical-align: top;
 }
-
+*/
 .textarea-reset:disabled {
 	color: initial;
 }

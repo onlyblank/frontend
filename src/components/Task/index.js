@@ -15,7 +15,8 @@ export default function Task({ task, setTask, editable, ...props }){
 		<div className="task">
 			{task.question && <div className="task__question-wrapper">
 				<ExpandableTextarea 
-					disabled={!editable}
+					//disabled={!editable}
+					disabled={false}
 					className="task__question"
 					onChange={event => setTaskProperty("question", event.target.value)}
 					value={task.question}
@@ -29,7 +30,8 @@ export default function Task({ task, setTask, editable, ...props }){
 			</div>}
 			{task.annotation && <div className="task__annotation-wrapper">
 				<ExpandableTextarea 
-					disabled={!editable}
+					//disabled={!editable}
+					disabled={false}
 					className="task__annotation"
 					onChange={event => setTaskProperty("annotation", event.target.value)}
 					value={task.annotation}

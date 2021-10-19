@@ -40,7 +40,13 @@ export default class CodeEditor extends React.Component {
 
 	render(){
 		return(
-			<div className="task__code-wrapper" ref={this.state.wrapperRef}></div>
+			<div 
+				className="task__code-wrapper" 
+				ref={this.state.wrapperRef}
+				style={{
+					width: "100%"
+				}}
+			></div>
 		)
 	}
 }

@@ -21,8 +21,14 @@ export default class ExpandableTextarea extends React.Component {
 
 	updateHeight(){
 		const textarea = this.textarea.current;
-		textarea.style.height = "auto";
-		textarea.style.height = textarea.scrollHeight + "px";
+		/*
+		//textarea.style.height = "auto";
+		console.log(textarea.value,  textarea.scrollHeight, textarea.clientHeight);
+		//textarea.style.height = textarea.scrollHeight + "px";
+		*/
+
+		textarea.parentNode.dataset.replicatedValue = textarea.value;
+		console.log(textarea.value);
 	}
 
 	onChange(event){
@@ -34,13 +40,15 @@ export default class ExpandableTextarea extends React.Component {
 	render(){
 		// onChange must be excluded from `props` object.
 		const {className, onChange, ...props} = this.props;
-		return (<textarea
-			rows={1}
-			{...props}
-			className={("textarea-reset " + className).trim()}
-			onChange={this.onChange}
-			ref={this.textarea}
-			spellCheck="false"
-		></textarea>);
+		return (<div className={("grow-wrap " + className).trim()}>
+			<textarea
+				rows={1}
+				{...props}
+				className={"textarea-reset"}
+				onChange={this.onChange}
+				ref={this.textarea}
+				spellCheck="false"
+			/>
+		</div>);
 	}
 }
