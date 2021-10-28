@@ -1,0 +1,11 @@
+.textarea-static {
+	border: none;
+	box-shadow: none;
+	outline: none;
+	resize: none;
+	overflow: hidden;
+	box-sizing: border-box;
+	vertical-align: top;
+	background-color: transparent;
+	width: auto;
+}
