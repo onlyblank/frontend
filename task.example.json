@@ -1,0 +1,71 @@
+{
+	"data": {
+		"id": 1,
+		"attributes": {
+			"createdAt": "2022-07-08T08:17:43.522Z",
+			"updatedAt": "2022-07-08T08:17:44.513Z",
+			"publishedAt": "2022-07-08T08:17:44.507Z",
+			"answer": [
+				{
+					"id": 2,
+					"__component": "task-answer.text",
+					"text": "test"
+				}
+			],
+			"fields": [
+				{
+					"id": 2,
+					"__component": "task-field.rich-text",
+					"text": "# В результате выполнения программы"
+				},
+				{
+					"id": 3,
+					"__component": "task-field.code",
+					"code": "Console.Write(\"test\");",
+					"language": "csharp"
+				},
+				{
+					"id": 1,
+					"__component": "task-field.image",
+					"caption": "aboba",
+					"image": {
+						"data": {
+							"id": 1,
+							"attributes": {
+								"name": "bsodos.jpg",
+								"alternativeText": "bsodos.jpg",
+								"caption": "bsodos.jpg",
+								"width": 460,
+								"height": 460,
+								"formats": {
+									"thumbnail": {
+										"name": "thumbnail_bsodos.jpg",
+										"hash": "thumbnail_bsodos_03f667f686",
+										"ext": ".jpg",
+										"mime": "image/jpeg",
+										"path": null,
+										"width": 156,
+										"height": 156,
+										"size": 6.24,
+										"url": "/uploads/thumbnail_bsodos_03f667f686.jpg"
+									}
+								},
+								"hash": "bsodos_03f667f686",
+								"ext": ".jpg",
+								"mime": "image/jpeg",
+								"size": 35.66,
+								"url": "/uploads/bsodos_03f667f686.jpg",
+								"previewUrl": null,
+								"provider": "local",
+								"provider_metadata": null,
+								"createdAt": "2022-07-08T18:38:53.073Z",
+								"updatedAt": "2022-07-08T18:38:53.073Z"
+							}
+						}
+					}
+				}
+			]
+		}
+	},
+	"meta": {}
+}
