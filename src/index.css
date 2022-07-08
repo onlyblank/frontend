@@ -1,18 +1,3 @@
-:root {
-	font-size: 62.5%;
-	--font-size--small: 1.4rem;
-	--font-size--default: 1.6rem;
-	--font-size--medium: 2rem;
-	--font-size--large: 2.4rem;
-
-	--color-background: #F2FBE0;
-	/*--color-background: #a8d0db;*/
-	--color-primary-blue: #283f6f;
-	--color-secondary-blue: #74acf8;
-	--color-primary-red: #764368;
-	--color-secondary-red: #bf486b;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
