@@ -3,25 +3,25 @@ import { Component, Resource } from "./schema"
 
 // AnswerComponent
 
-type AnswerTextComponent = Component<
+export type AnswerTextComponent = Component<
 	"task-answer.text",
 	{
 		text: string
 	}
 >
 
-type AnswerComponent = AnswerTextComponent
+export type AnswerComponent = AnswerTextComponent
 
 // FieldComponent
 
-type FieldRichTextComponent = Component<
+export type FieldRichTextComponent = Component<
 	"task-field.rich-text",
 	{
 		text: string
 	}
 >
 
-type FieldCodeComponent = Component<
+export type FieldCodeComponent = Component<
 	"task-field.code",
 	{
 		code: string
@@ -29,7 +29,7 @@ type FieldCodeComponent = Component<
 	}
 >
 
-type FieldImageComponent = Component<
+export type FieldImageComponent = Component<
 	"task-field.image",
 	{
 		caption: string
@@ -39,10 +39,12 @@ type FieldImageComponent = Component<
 	}
 >
 
-type FieldComponent =
+export type FieldComponent =
 	| FieldCodeComponent
 	| FieldRichTextComponent
 	| FieldImageComponent
+
+// TaskDto
 
 export type TaskDto = Resource<{
 	answer: AnswerComponent[]
