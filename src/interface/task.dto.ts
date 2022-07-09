@@ -1,47 +1,51 @@
-import { Identifiable } from "./identifiable"
+import { Component } from "react"
 import { ImageDto } from "./image.dto"
+import { Resource } from "./schema"
 
 // AnswerComponent
 
-interface AnswerTextComponent {
-	__component: "task-answer.text"
-	text: string
-}
+type AnswerTextComponent = Component<
+	"task-answer.text",
+	{
+		text: string
+	}
+>
 
-type AnswerComponent = AnswerTextComponent & Identifiable
+type AnswerComponent = AnswerTextComponent
 
 // FieldComponent
 
-interface FieldRichTextComponent {
-	__component: "task-field.rich-text"
-	text: string
-}
-
-interface FieldCodeComponent {
-	__component: "task-field.code"
-	code: string
-	language: "csharp" | "cpp" | "javascript"
-}
-
-interface FieldImageComponent {
-	__component: "task-field.image"
-	caption: string
-	image: {
-		data: ImageDto
+type FieldRichTextComponent = Component<
+	"task-field.rich-text",
+	{
+		text: string
 	}
-}
+>
 
-type FieldComponent = (
+type FieldCodeComponent = Component<
+	"task-field.code",
+	{
+		code: string
+		language: "csharp" | "cpp" | "javascript"
+	}
+>
+
+type FieldImageComponent = Component<
+	"task-field.image",
+	{
+		caption: string
+		image: {
+			data: ImageDto
+		}
+	}
+>
+
+type FieldComponent =
 	| FieldCodeComponent
 	| FieldRichTextComponent
 	| FieldImageComponent
-) &
-	Identifiable
 
-export interface TaskDto {
-	id: number
-	attributes: {
-		answer: AnswerComponent[]
-		fields: FieldComponent[]
-	}
-}
+export type TaskDto = Resource<{
+	answer: AnswerComponent[]
+	fields: FieldComponent[]
+}>
