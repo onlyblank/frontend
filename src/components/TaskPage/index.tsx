@@ -5,21 +5,23 @@ import Task from "../Task"
 import { tasks } from "../../api/cms/tasks"
 
 export default function TaskPage() {
-	const { id } = useParams()
+	const { id } = { id: 3 }
+	//const { id } = useParams()
 
 	const [task, setTask] = useState<TaskDto | null>(null)
 
+	// TODO: Hook executes twice. Need to investigate
 	useEffect(() => {
 		async function getData(id: number) {
 			const taskDto: TaskDto = await tasks.findById(id)
-			console.info(taskDto)
+			console.info(id, taskDto)
 			setTask(taskDto)
 			// TODO: Emit ready event
 		}
-		if (id) {
+		if (id !== undefined) {
 			getData(+id)
 		}
-		// TODO Hook depends from `setTask`. Should I pass it into dependency array?
+		// TODO: Hook depends from `setTask`. Should I pass it into dependency array?
 	}, [id])
 
 	return (
