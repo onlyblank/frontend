@@ -3,7 +3,7 @@ import {
 	isFieldCodeComponent,
 	isFieldImageComponent,
 	isFieldRichTextComponent,
-} from "../../interface/schema.guards"
+} from "../../interface/task.guards"
 import {
 	FieldCodeComponent,
 	FieldComponent,
