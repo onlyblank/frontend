@@ -1,6 +1,5 @@
-import { Component } from "react"
 import { ImageDto } from "./image.dto"
-import { Resource } from "./schema"
+import { Component, Resource } from "./schema"
 
 // AnswerComponent
 
