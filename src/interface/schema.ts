@@ -17,3 +17,8 @@ export type Resource<T> = {
 
 export type Component<Name extends string, Data> = Data &
 	Identifiable & { __component: Name }
+
+export type Response<T> = {
+	data: T
+	meta: {}
+}
