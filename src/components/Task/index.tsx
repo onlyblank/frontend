@@ -27,15 +27,18 @@ function FieldImage(component: FieldImageComponent) {
 }
 
 function mapFieldComponent(component: FieldComponent) {
+	let mapped = <div>not implemented</div>
+
 	if (isFieldRichTextComponent(component)) {
-		return FieldRichText(component)
+		mapped = FieldRichText(component)
+	} else if (isFieldCodeComponent(component)) {
+		mapped = FieldCode(component)
+	} else if (isFieldImageComponent(component)) {
+		mapped = FieldImage(component)
 	}
-	if (isFieldCodeComponent(component)) {
-		return FieldCode(component)
-	}
-	if (isFieldImageComponent(component)) {
-		return FieldImage(component)
-	}
+
+	const key = component.__component + "__" + component.id
+	return <div key={key}>{mapped}</div>
 }
 
 type Props = {
