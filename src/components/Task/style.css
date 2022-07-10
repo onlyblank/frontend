@@ -17,7 +17,12 @@
 	box-shadow: 0 0 1px 0 red;
 }
 
-.task__field:not(:last-child){
+.task__field:not(:last-child) {
 	margin-bottom: 10px;
 }
 
+.task__code-editor-wrapper {
+	margin: 0.5rem 0 1rem 0;
+	font-size: var(--font-size--medium);
+	width: fit-content;
+}
