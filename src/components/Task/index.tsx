@@ -14,16 +14,16 @@ import {
 import "./style.css"
 
 function FieldRichText(component: FieldRichTextComponent) {
-	return <div></div>
+	return <div className="task-field--rich-text">{component.text}</div>
 }
 
 function FieldCode(component: FieldCodeComponent) {
-	return <div></div>
+	return <div className="task-field--code">{component.code} {component.language}</div>
 }
 
 function FieldImage(component: FieldImageComponent) {
 	// TODO: implement
-	return <div></div>
+	return <div className="task-field--image"></div>
 }
 
 function mapFieldComponent(component: FieldComponent) {
@@ -38,7 +38,7 @@ function mapFieldComponent(component: FieldComponent) {
 	}
 
 	const key = component.__component + "__" + component.id
-	return <div key={key}>{mapped}</div>
+	return <div className="task__field" key={key}>{mapped}</div>
 }
 
 type Props = {
