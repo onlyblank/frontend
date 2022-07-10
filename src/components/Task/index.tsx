@@ -12,11 +12,15 @@ import {
 } from "../../interface/task.dto"
 import "./style.css"
 import FieldRichText from "../FieldRichText"
+import HighlightedCode from "../HighlightedCode"
 
 function FieldCode(component: FieldCodeComponent) {
 	return (
 		<div className="task-field--code">
-			{component.code} {component.language}
+			<HighlightedCode
+				code={component.code}
+				language={component.language}
+			/>
 		</div>
 	)
 }
