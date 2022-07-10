@@ -1,7 +1,7 @@
-import React from "react"
 import TaskPage from "./components/TaskPage"
 
 import "./reset.css"
+import "./variables.css"
 
 function App() {
 	return (
