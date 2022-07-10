@@ -8,17 +8,17 @@ import {
 	FieldCodeComponent,
 	FieldComponent,
 	FieldImageComponent,
-	FieldRichTextComponent,
 	TaskDto,
 } from "../../interface/task.dto"
 import "./style.css"
-
-function FieldRichText(component: FieldRichTextComponent) {
-	return <div className="task-field--rich-text">{component.text}</div>
-}
+import FieldRichText from "../FieldRichText"
 
 function FieldCode(component: FieldCodeComponent) {
-	return <div className="task-field--code">{component.code} {component.language}</div>
+	return (
+		<div className="task-field--code">
+			{component.code} {component.language}
+		</div>
+	)
 }
 
 function FieldImage(component: FieldImageComponent) {
@@ -38,7 +38,11 @@ function mapFieldComponent(component: FieldComponent) {
 	}
 
 	const key = component.__component + "__" + component.id
-	return <div className="task__field" key={key}>{mapped}</div>
+	return (
+		<div className="task__field" key={key}>
+			{mapped}
+		</div>
+	)
 }
 
 type Props = {
