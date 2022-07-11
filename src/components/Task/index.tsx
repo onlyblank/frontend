@@ -1,37 +1,16 @@
-import React from "react"
 import {
 	isFieldCodeComponent,
 	isFieldImageComponent,
 	isFieldRichTextComponent,
 } from "../../interface/task.guards"
-import {
-	FieldCodeComponent,
-	FieldComponent,
-	FieldImageComponent,
-	TaskDto,
-} from "../../interface/task.dto"
+import { FieldComponent, TaskDto } from "../../interface/task.dto"
 import "./style.css"
 import FieldRichText from "../FieldRichText"
-import HighlightedCode from "../HighlightedCode"
-
-function FieldCode(component: FieldCodeComponent) {
-	return (
-		<div className="task-field--code">
-			<HighlightedCode
-				code={component.code}
-				language={component.language}
-			/>
-		</div>
-	)
-}
-
-function FieldImage(component: FieldImageComponent) {
-	// TODO: implement
-	return <div className="task-field--image"></div>
-}
+import FieldCode from "../FieldCode"
+import FieldImage from "../FieldImage"
 
 function mapFieldComponent(component: FieldComponent) {
-	let mapped = <div>not implemented</div>
+	let mapped = <div>unknown component type</div>
 
 	if (isFieldRichTextComponent(component)) {
 		mapped = FieldRichText(component)
@@ -41,7 +20,7 @@ function mapFieldComponent(component: FieldComponent) {
 		mapped = FieldImage(component)
 	}
 
-	const key = component.__component + "__" + component.id
+	const key = component.__component + "." + component.id
 	return (
 		<div className="task__field" key={key}>
 			{mapped}
