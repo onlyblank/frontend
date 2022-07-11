@@ -19,15 +19,31 @@ export const tasks = {
 							],
 							fields: [
 								{
+									id: 1,
+									__component: "task-field.rich-text",
+									text: "В результате выполнения программы\n\nnext line\n\nanother line",
+								},
+								{
+									id: 1,
+									__component: "task-field.code",
+									code: 'Console.Write("sometext")',
+									language: "csharp",
+								},
+								{
 									id: 2,
 									__component: "task-field.rich-text",
-									text: "# В результате выполнения программы",
+									text: "Markdown test\n- case 1\n- case 2\n- case 3\n- another one\n- and another one",
+								},
+								{
+									id: 2,
+									__component: "task-field.code",
+									code: "var message = \"More fields and this is very long code string some dummy text\";\nvar one = 1;\nvar two = \"2\";\nvar three =  0x0003\n",
+									language: "csharp",
 								},
 								{
 									id: 3,
-									__component: "task-field.code",
-									code: 'Console.Write("test");',
-									language: "csharp",
+									__component: "task-field.rich-text",
+									text: "1. ~~another one~~ strikethrough\n2. **another one** bold\n3. _and another one_ italic\n4. <u>and another one</u> underline",
 								},
 							],
 						},
