@@ -5,8 +5,7 @@ import Task from "../Task"
 import { tasks } from "../../api/cms/tasks"
 
 export default function TaskPage() {
-	const { id } = { id: 3 }
-	//const { id } = useParams()
+	const { id } = useParams()
 
 	const [task, setTask] = useState<TaskDto | null>(null)
 
