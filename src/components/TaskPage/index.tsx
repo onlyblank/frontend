@@ -21,7 +21,7 @@ export default function TaskPage() {
 		if (id !== undefined) {
 			getData(+id)
 		}
-		// TODO: Hook depends from `setTask`. Should I pass it into dependency array?
+		// TODO: Hook depends on `setTask`. Should I pass it into dependency array?
 	}, [id])
 
 	return (
