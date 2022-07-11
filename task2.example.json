@@ -1,0 +1,47 @@
+{
+	"data": {
+		"id": 2,
+		"attributes": {
+			"createdAt": "2022-07-11T08:48:56.754Z",
+			"updatedAt": "2022-07-11T08:49:06.408Z",
+			"publishedAt": "2022-07-11T08:48:59.130Z",
+			"answer": [
+				{
+					"id": 2,
+					"__component": "task-answer.text",
+					"text": "123"
+				}
+			],
+			"fields": [
+				{
+					"id": 1,
+					"__component": "task-field.rich-text",
+					"text": "В результате выполнения программы"
+				},
+				{
+					"id": 1,
+					"__component": "task-field.code",
+					"code": "Console.Write(\"sometext\")",
+					"language": "csharp"
+				},
+				{
+					"id": 2,
+					"__component": "task-field.rich-text",
+					"text": "Markdown test\n- case 1\n- case 2\n- case 3\n- another one\n- and another one"
+				},
+				{
+					"id": 2,
+					"__component": "task-field.code",
+					"code": "var message = \"More fields sheeeeesh\"",
+					"language": "csharp"
+				},
+				{
+					"id": 3,
+					"__component": "task-field.rich-text",
+					"text": "1. ~~another one~~ strikethrough\n2. **another one** bold\n3. _and another one_ italic\n4. <u>and another one</u> underline"
+				}
+			]
+		}
+	},
+	"meta": {}
+}

@@ -1,0 +1,12 @@
+.CodeMirror {
+	height: auto;
+	padding: 1rem 0.5rem;
+	border-radius: 1rem;
+}
+
+.task-field--code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+
+	font-size: var(--font-size--medium);
+}

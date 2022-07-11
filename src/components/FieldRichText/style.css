@@ -1,0 +1,9 @@
+.task-field--rich-text {
+	background-color: inherit;
+	font-family: "Kraskario", "Times New Roman", Times, serif;
+	font-size: var(--font-size--medium);
+}
+
+.task-field--rich-text p {
+	margin: 0.5rem 0;
+}
