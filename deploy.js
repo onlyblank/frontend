@@ -10,5 +10,6 @@ module.exports = ({ env }) => {
 
 	shell.cd(__dirname)
 	shell.exec("npm run build")
+	shell.cp("build/index.html", "build/200.html")
 	shell.exec(`surge ./build --domain ${domain}`)
 }
