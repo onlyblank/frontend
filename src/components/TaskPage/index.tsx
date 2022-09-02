@@ -9,18 +9,15 @@ export default function TaskPage() {
 
 	const [task, setTask] = useState<TaskDto | null>(null)
 
-	// TODO: Hook executes twice. Need to investigate
 	useEffect(() => {
-		async function getData(id: number) {
-			const taskDto: TaskDto = await tasks.findById(id)
+		if (id === undefined) {
+			return
+		}
+		tasks.findById(+id).then((taskDto) => {
 			console.info(id, taskDto)
 			setTask(taskDto)
 			// TODO: Emit ready event
-		}
-		if (id !== undefined) {
-			getData(+id)
-		}
-		// TODO: Hook depends on `setTask`. Should I pass it into dependency array?
+		})
 	}, [id])
 
 	return (
