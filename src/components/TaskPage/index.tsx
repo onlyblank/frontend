@@ -16,7 +16,7 @@ export default function TaskPage() {
 		tasks.findById(+id).then((taskDto) => {
 			console.info(id, taskDto)
 			setTask(taskDto)
-			// TODO: Emit ready event
+			window.dispatchEvent(new CustomEvent('rendered'));
 		})
 	}, [id])
 
