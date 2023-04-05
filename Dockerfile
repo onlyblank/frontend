@@ -8,7 +8,7 @@ RUN npm ci
 COPY public/ public
 COPY src/ src
 COPY tsconfig.json tsconfig.json
-COPY .env .env
+COPY .env.development .env
 
 RUN npm run build
 
