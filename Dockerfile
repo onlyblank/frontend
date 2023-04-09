@@ -8,10 +8,10 @@ RUN npm ci
 COPY public/ public
 COPY src/ src
 COPY tsconfig.json tsconfig.json
-COPY .env.development .env
+ENV REACT_APP_CMS_API_ENDPOINT=http://cms:1337/api
+# RUN echo REACT_APP_CMS_API_ENDPOINT=${REACT_APP_CMS_API_ENDPOINT} >> .env
 
 RUN npm run build
-
 
 FROM nginx:1.23.4-alpine
 
